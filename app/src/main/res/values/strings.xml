@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">New Assignment 5 Pokemon WatchList~KanuShetkar</string>
+    <string name="type_pokemon">type Pokemon</string>
+    <string name="pokemon_watchlist">Pokemon WatchList</string>
+    <string name="search">search</string>
+    <string name="pokemonname">PokemonName</string>
+    <string name="id">ID</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="base_ep">Base EP</string>
+    <string name="move">move</string>
+    <string name="ability">ability</string>
+
+</resources>
