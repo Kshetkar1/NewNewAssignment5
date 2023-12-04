@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E57373"
     tools:context=".MainActivity">
 
     <TextView
@@ -20,14 +21,16 @@
 
     <EditText
         android:id="@+id/typePokemonID"
-        android:layout_width="179dp"
-        android:layout_height="37dp"
+        android:layout_width="175dp"
+        android:layout_height="53dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="76dp"
+        android:layout_marginBottom="15dp"
         android:ems="10"
         android:inputType="text"
         android:text="@string/type_pokemon"
+        app:layout_constraintBottom_toTopOf="@+id/WatchListLinearLayout"
         app:layout_constraintEnd_toStartOf="@+id/searchID"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/searchID" />
@@ -46,14 +49,14 @@
 
     <ImageView
         android:id="@+id/pictureID"
-        android:layout_width="72dp"
-        android:layout_height="60dp"
+        android:layout_width="128dp"
+        android:layout_height="109dp"
         android:layout_marginStart="330dp"
         android:layout_marginEnd="9dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="44dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@android:drawable/ic_menu_info_details" />
 
@@ -61,16 +64,16 @@
         android:id="@+id/PokemonNameID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="47dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/pokemonname"
         app:layout_constraintBottom_toTopOf="@+id/pictureID"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="76dp"
-        android:layout_height="332dp"
+        android:layout_width="56dp"
+        android:layout_height="349dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="93dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,8 +83,8 @@
             android:id="@+id/IDLL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="72dp"
             android:text="@string/id"
             app:layout_constraintBottom_toTopOf="@+id/WeightID"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -90,8 +93,8 @@
             android:id="@+id/WeightID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="52dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="56dp"
             android:text="@string/weight"
             app:layout_constraintBottom_toTopOf="@+id/HeightID"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -100,7 +103,7 @@
             android:id="@+id/HeightID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="24dp"
             android:text="@string/height"
             app:layout_constraintBottom_toTopOf="@+id/BaseEpID"
@@ -110,8 +113,8 @@
             android:id="@+id/BaseEpID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="14dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="12dp"
             android:text="@string/base_ep"
             app:layout_constraintBottom_toTopOf="@+id/moveID"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -120,8 +123,8 @@
             android:id="@+id/moveID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="33dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="28dp"
             android:text="@string/move"
             app:layout_constraintBottom_toTopOf="@+id/abilityID"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -130,12 +133,75 @@
             android:id="@+id/abilityID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="16dp"
             android:text="@string/ability"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/WatchListLinearLayout"
+        android:layout_width="217dp"
+        android:layout_height="448dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="167dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pictureID"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ListView
+            android:id="@+id/watchlistListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="221dp"
+        android:layout_marginBottom="80dp"
+        android:text="clearALL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/WatchListLinearLayout" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="88dp"
+        android:text="clearTheProfile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/WatchListLinearLayout" />
+
+    <Button
+        android:id="@+id/addID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="add"
+        android:text="add"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+        app:layout_constraintStart_toEndOf="@+id/WatchListLinearLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

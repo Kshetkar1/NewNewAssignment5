@@ -1,5 +1,7 @@
 package com.example.newassignment5pokemonwatchlistkanushetkar;
 
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,16 @@ public class PokeInfo {
         this.baseEP = baseEP;
         this.move = move;
         this.ability = ability;
+    }
+
+    public PokeInfo(String name, int id, TextView weight, TextView height, TextView baseEP, TextView move, TextView ability) {
+    }
+
+    public PokeInfo(String name, int id) {
+
+    }
+
+    public PokeInfo(String name, int id, String weight, String height, String baseEP, String move, String ability) {
     }
 
 
@@ -55,10 +67,11 @@ public class PokeInfo {
     }
 
 
+    public String getName() {
+        return pokemonName;
+    }
 
-
-
-
-
-
+    public int getId() {
+        return iD;
+    }
 }
